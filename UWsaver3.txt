@@ -1,0 +1,15 @@
+// Smooth scrolling for nav links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        section.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Track CTA clicks (for debugging)
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', () => {
+        console.log('Join button clicked for UW link!');
+    });
+});
